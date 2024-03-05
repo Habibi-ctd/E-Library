@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        form input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        /* Optional: Style for better readability of labels */
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get"  action="{% url 'AddedMembers' %}">
+        ID<input type="number" name="id" placeholder="Enter ID of the Member" >
+        Name<input type="text" name="Name" placeholder="Enter Name of the Member">
+        Semester<input type="number" name="Semester" placeholder="Enter Semester of the Member">
+        Branch<input type="text" name="Branch" placeholder="Enter branch of the Member">
+        Mobile No.<input type="number" name="Mob_No" placeholder="Enter contact of the Member">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

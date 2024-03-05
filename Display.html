@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #d15757;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Description</th>
+                <th>Semester</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Elibrary in result %}
+                <tr>
+                    <td>{{ Elibrary.id }}</td>
+                    <td>{{ Elibrary.Name }}</td>
+                    <td>{{ Elibrary.Subject }}</td>
+                    <td>{{ Elibrary.Description }}</td>
+                    <td>{{ Elibrary.Semester }}</td>
+                    <td>{{ Elibrary.Quantity }}</td>
+                    <td>{{ Elibrary.Price }}</td>
+                    <td><button><a href="{% url 'delete' %}?id={{ Elibrary.id }}">Delete</a></button></td>
+                    <td><button><a href="{% url 'update' %}?id={{ Elibrary.id }}">Update</a></button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

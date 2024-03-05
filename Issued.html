@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Members List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #0a0505;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Member ID</th>
+                <th>Member Name</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in data %}
+            <tr>
+                <td>{{ info.id }}</td>
+                <td>{{ info.Book_id_id }}</td>
+                <td>{{ info.Book_id__Name }}</td>
+                <td>{{ info.Member_id_id }}</td>
+                <td>{{ info.Member_id__Name }}</td>
+                <td>{{ info.issue_date }}</td>
+                <td>{{ info.Return_date }}</td>
+                <td>{{ info.Status }}</td>
+                <td><button><a href="{% url 'UpdateIssue' %}?id={{ info.id }}">Update</a></button></td>
+            </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+    <!-- <button><a href="Members.html">Add Members</a></button> -->
+</body>
+</html>
